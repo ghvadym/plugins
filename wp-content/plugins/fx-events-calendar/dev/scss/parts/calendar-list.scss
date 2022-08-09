@@ -1,0 +1,45 @@
+.fx_calendar__date {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 10px;
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        left: 0;
+        top: calc(50% - 2px);
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+}
+
+.fx_calendar__date_posts {
+    .fx_post__wrap {
+        gap: 30px;
+        margin-bottom: 20px;
+    }
+
+    .fx_post__text {
+        color: #000;
+    }
+
+    .fx_post__desc {
+        font-size: 0.9rem;
+
+        @media (max-width: $tablet) {
+            font-size: 0.8rem;
+        }
+    }
+
+    .fx_post__img {
+        height: 70px;
+        flex: 0 0 70px;
+    }
+
+    .fx_post__time {
+        font-size: 0.7rem;
+    }
+}

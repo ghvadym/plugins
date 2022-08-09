@@ -1,0 +1,93 @@
+.flexi-calendar {
+    .fx_calendar__datepicker {
+        position: relative;
+
+        &.dp-changed .fx_icon-close {
+            display: block;
+        }
+    }
+}
+
+.fx_datepicker__wrapper {
+    width: 220px;
+    padding: 7px;
+    box-shadow: 0 0 13px -1px #ccc;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 10;
+    background: white;
+    top: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: ease-in-out 0.3s;
+
+    &.active {
+        top: calc(100% + 10px);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.fx_datepicker__head {
+    box-shadow: 0 0 15px -1px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    cursor: pointer;
+    min-width: 150px;
+    background-color: #fff;
+    font-size: 14px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+
+    @media (max-width: $tablet) {
+        min-width: 120px;
+        font-size: 12px;
+        padding: 0 10px;
+        height: 30px;
+    }
+}
+
+.fx_datepicker__year {
+    padding: 10px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .fx_year-arrow {
+        width: 20px;
+        height: 20px;
+        background-image: url('../images/arrow-right.svg');
+        cursor: pointer;
+        @extend .bg-contain;
+    }
+
+    .fx_year-prev {
+        transform: rotate(180deg);
+    }
+}
+
+.fx_datepicker__list {
+    @extend .flex-center;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.fx_datepicker__item {
+    @extend .flex-center;
+    width: calc(100% / 4 - 4px);
+    height: 34px;
+    background: #3f55fd;
+    color: white;
+    font-size: 14px;
+    border-radius: 3px;
+
+    &:not(.active) {
+        cursor: pointer;
+    }
+
+    &.active {
+        opacity: 0.7;
+    }
+}

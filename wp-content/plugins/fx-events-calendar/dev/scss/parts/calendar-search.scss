@@ -1,0 +1,59 @@
+.flexi-calendar {
+    .fx_calendar__search {
+        position: relative;
+
+        &.input-focus {
+            .fx_search__label {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .fx_search__reset {
+                display: block;
+            }
+        }
+    }
+
+    .fx_search__label {
+        @extend .abs-center-y;
+        left: 20px;
+        font-size: 14px;
+        cursor: auto;
+
+        @media (max-width: $tablet) {
+            font-size: 12px;
+            left: 10px;
+        }
+    }
+
+    .fx_search__btn {
+        right: 10px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        @extend .abs-center-y, .bg-contain;
+        background-image: url('../images/search.svg');
+    }
+
+    .fx_search__field {
+        height: 40px;
+        width: 240px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 0 15px -1px rgba(0, 0, 0, 0.1);
+        padding: 10px 30px 10px 20px;
+        font-size: 14px;
+
+        &:focus, &:active {
+            border: none;
+            outline: none;
+        }
+
+        @media (max-width: $tablet) {
+            height: 30px;
+            width: 180px;
+            padding-left: 10px;
+            font-size: 12px;
+        }
+    }
+}

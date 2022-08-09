@@ -1,0 +1,26 @@
+.flexi-calendar {
+    .fx_filter__cat {
+        margin-bottom: 20px;
+    }
+
+    .fx_filter__title {
+        padding: 0;
+        margin-bottom: 15px;
+    }
+
+    .fx_filter__item {
+        display: flex;
+        gap: 5px;
+        text-transform: capitalize;
+        margin-bottom: 10px;
+        cursor: pointer;
+        font-size: 0.8rem;
+        line-height: 1;
+    }
+
+    .fx_filter__list {
+        &.disable {
+            display: none;
+        }
+    }
+}

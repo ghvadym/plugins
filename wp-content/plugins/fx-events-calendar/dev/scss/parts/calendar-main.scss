@@ -1,0 +1,207 @@
+.flexi-calendar {
+    position: relative;
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+
+    &.fx_posts-not-found {
+        .fx_calendar__week,
+        .fx_calendar__filter > .fx-btn,
+        .fx_calendar__format {
+            display: none;
+        }
+    }
+
+    .fx_calendar__row {
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    .fx_calendar__content {
+        border-radius: 10px;
+    }
+
+    .fx_calendar__filter {
+        flex: 0 0 200px;
+    }
+
+    .fx_calendar__body {
+        max-width: 800px;
+        width: 100%;
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .fx_calendar__head {
+        margin-bottom: 20px;
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .fx_calendar__loop {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: start;
+        position: relative;
+        min-height: 200px;
+    }
+
+    .fx_calendar__format {
+        .fx_format__item {
+            display: inline-flex;
+            text-transform: capitalize;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+            border-radius: 5px;
+            min-width: 50px;
+            height: 40px;
+            font-size: 14px;
+
+            &:last-child {
+                margin-left: 5px;
+            }
+
+            &.active {
+                background-color: #fff;
+            }
+
+            &:not(.active) {
+                cursor: pointer;
+            }
+
+            @media (max-width: $tablet) {
+                padding: 10px;
+                font-size: 12px;
+                height: 30px;
+            }
+        }
+    }
+
+    .select__head {
+        height: 38px;
+        padding: 10px;
+        z-index: 10;
+        cursor: pointer;
+        border: 1px solid;
+        border-radius: 5px;
+        position: relative;
+
+        &:after {
+            content: '';
+            background: url('../images/arrow-down.png') center / cover no-repeat;
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            right: 10px;
+            top: calc(50% - 8px);
+            transition: .5s;
+        }
+    }
+
+    .calendar__select {
+        position: relative;
+        max-width: 160px;
+        width: 100%;
+
+        &.active {
+            .select__list {
+                height: 300%;
+                opacity: 1;
+            }
+
+            .select__head {
+                border-radius: 5px 5px 0 0;
+                border-bottom: none;
+
+                &:after {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+
+    .select__list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        height: 0;
+        background-color: #fff;
+        max-height: calc(100% * 6);
+        border: 1px solid;
+        border-radius: 0 0 5px 5px;
+        transition: .5s;
+        opacity: 0;
+        @extend .fx_scrollbar;
+    }
+
+    .select__item {
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .fx_calendar__body {
+        margin-bottom: 30px;
+
+        .fx_post__wrap {
+            display: flex;
+        }
+
+        .fx_post__text {
+            color: #000;
+        }
+
+        .fx_post__title {
+            padding: 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .fx_post__time {
+            font-size: 0.7rem;
+            color: rgba(0, 0, 0, 0.7);
+        }
+    }
+
+    .fx_calendar__week {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .fx_calendar__week_day {
+        width: calc(100% / 7);
+        text-align: center;
+        padding: 10px;
+        font-size: 1rem;
+
+        &:nth-child(6), &:nth-child(7) {
+            color: rgba(255,0,0,.5);
+        }
+
+        @media (max-width: $tablet) {
+            font-size: 14px;
+        }
+    }
+
+    .fx_posts-not-found {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        text-align: center;
+
+        .fx_posts-not-found__title {
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+    }
+}
