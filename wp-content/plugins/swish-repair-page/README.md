@@ -1,0 +1,1 @@
+<h1>WordPress plugin for easy pay with Swish API.</h1>

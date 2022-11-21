@@ -1,0 +1,59 @@
+.sf-preloader {
+    pointer-events: none;
+    position: relative;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.sf-preloader:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.sf-preloader:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: url("../imgs/preloader.gif") center / contain no-repeat;
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+}
+
+.payment-form-message {
+    display: none;
+    font-size: 18px;
+    margin: 20px 0;
+    color: red;
+    line-height: 1.6;
+}
+
+.payment-form-message font {
+    font-size: 18px;
+    color: red;
+    line-height: 1.6;
+}
+
+.manual-payment-form {
+    max-width: 300px;
+    padding: 30px 0;
+}
+
+[id=manual-payment-login] {
+    display: flex;
+}
+
+[id=manual-payment-login] .form-group:first-child {
+    margin: 0 5px 0 0;
+}
+
+[id=manual-payment-login] .form-group:last-child {
+    align-self: flex-end;
+    margin: 0;
+}
